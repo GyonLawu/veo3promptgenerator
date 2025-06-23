@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veo 3 Consistent Character Prompt Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Veo 3 Consistent Character Prompt Generator</h1>
+        <p class="subtitle">By Gyon Lawu</p>
+
+        <p>Isi kolom di bawah ini untuk menghasilkan prompt yang terstruktur untuk Veo 3</p>
+
+        <form id="prompt-form">
+            <div class="form-group">
+                <label for="judul">1. Judul Scene</label>
+                <input type="text" id="judul" placeholder="Contoh: Stasiun Kereta Malam">
+            </div>
+
+            <div class="form-group">
+                <label for="deskripsi-karakter">2. Deskripsi Karakter Utama</label>
+                <textarea id="deskripsi-karakter" rows="6" placeholder="Contoh: Seorang Master Cheft Wanita muda asal Jakarta berusia 23 tahun, Perawakan/Bentuk Tubuh: Sexy, Proposional. Tinggi 172cm, warna kulit: sawo matang cerah.
+Rambut: ikal sebahu, hitam kecoklatan, diikat setengah ke belakang
+Wajah: wajah oval, alis tebal alami, mata hitam besar, senyum ramah, pipi merona, bibir natural dengan sentuhan lip tint
+Pakaian: mengenakan jaket parasut warna merah dan celana pendek cream, membawa tas ransel kecil"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="suara-karakter">3. Detail Suara Karakter Utama</label>
+                <textarea id="suara-karakter" rows="5" placeholder="Contoh: Dia berbicara dengan suara Wanita muda yang hangat dan penuh semangat, nada: mezzo-soprano Timbre: bersahabat dan energik
+Aksen/Logat: logat Indonesia dengan senyuhan khas minang halus, berbicara murni dalam Bahasa Indonesia
+Cara Berbicara: tempo sedang-cepat, gaya bicara lincah dan ekspresif
+(PENTING: Seluruh dialog harus dalam Bahasa Indonesia dengan pengucapan natural dan jelas. Pastikan suara karakter ini konsisten di seluruh video)"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="aksi-karakter">4. Aksi Karakter</label>
+                <input type="text" id="aksi-karakter" placeholder="Contoh: berjalan di stasiun kereta malam hari">
+            </div>
+
+            <div class="form-group">
+                <label for="ekspresi-karakter">5. Ekpresi Karakter</label>
+                <input type="text" id="ekspresi-karakter" placeholder="Contoh: Karakter menunjukkan ekpresi kagum dan antusias">
+            </div>
+
+            <div class="form-group">
+                <label for="latar">6. Latar Tempat & Waktu</label>
+                <input type="text" id="latar" placeholder="Contoh: Di stasiun Kereta Malam Hari">
+            </div>
+
+            <div class="form-group">
+                <label for="visual-tambahan">7. Detail Visual Tambahan</label>
+                <textarea id="visual-tambahan" rows="3" placeholder="Contoh: Pencahayaan: Natural dari lampu stasiun…Gaya Video/Art Style: cinematic realistis…"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="kamera">Gerakan Kamera</label>
+                <select id="kamera">
+                    <option value="">Pilih Pergerakan...</option>
+                    <!-- Opsi kamera akan ditambahkan di sini via JavaScript -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="suasana">8. Suasana Keseluruhan</label>
+                <input type="text" id="suasana" placeholder="Contoh: Suasana ramai, banyak orang menunggu kereta malam">
+            </div>
+
+            <div class="form-group">
+                <label for="suara-lingkungan">9. Suara Lingkungan/Ambience</label>
+                <input type="text" id="suara-lingkungan" placeholder="Contoh: Sound: Suara mesin kereta datang">
+            </div>
+
+            <div class="form-group">
+                <label for="dialog">10. Dialog Karakter (dalam Bahasa Indonesia)</label>
+                <input type="text" id="dialog" placeholder="Contoh: Karakter Berkata: "Hmmm, Bagus Stasiun Keretanya, Besar dan Luas"">
+            </div>
+
+            <div class="form-group">
+                <label for="negative-prompt">11. Prompt Negatif</label>
+                <textarea id="negative-prompt" rows="4" placeholder="Contoh: jangan ada teks di layer, subtitle, tulisan di video, font, logo, distorsi, artefak, anomali, wajah ganda, anggota badan cacat, tangan tidak normal, orang tambahan, objek mengganggu, kualitas rendah, buram, glitch, suara robotik, suara pecah."></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="button" id="generate-btn">Buat Prompt</button>
+                <button type="reset" id="reset-btn">Reset</button>
+            </div>
+        </form>
+
+        <div id="hasil-prompt" class="hidden">
+            <h2>Hasil Prompt</h2>
+            <div class="output-container">
+                <div class="output-column">
+                    <h3>Bahasa Indonesia (Dapat Diedit)</h3>
+                    <textarea id="prompt-indonesia" rows="15"></textarea>
+                </div>
+                <div class="output-column">
+                    <h3>Bahasa Inggris (Final)</h3>
+                    <textarea id="prompt-inggris" rows="15" readonly></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
